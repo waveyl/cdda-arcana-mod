@@ -12,10 +12,36 @@
           "has": "WORN",
           "condition": "ALWAYS",
           "values": [
-            { "value": "STRENGTH", "add": 10 },
-            { "value": "ARMOR_BASH", "add": -20 },
+            { "value": "STRENGTH", "add": 5 },
+            { "value": "ARMOR_BASH", "add": -10 },
             { "value": "ARMOR_CUT", "add": -20 },
-            { "value": "ARMOR_STAB", "add": -20 }
+            { "value": "ARMOR_STAB", "add": -15 },
+            { "value": "ARMOR_BULLET", "add": -15 }
+          ]
+        }
+      ]
+    },
+    "extend": { "flags": [ "ONLY_ONE", "NO_TAKEOFF" ] }
+  },
+  {
+    "id": "halo_phase_shield",
+    "copy-from": "spell_base",
+    "type": "ARMOR",
+    "name": { "str": "sunstone halo" },
+    "description": "A strange radiance permeating your body, repelling nearby attackers away from you.",
+    "color": "dark_gray",
+    "relic_data": {
+      "passive_effects": [
+        {
+          "has": "WORN",
+          "condition": "ALWAYS",
+          "hit_me_effect": [
+            {
+              "id": "arcana_react_phase_shield",
+              "once_in": 10,
+              "message": "%2$s is suddenly forced back!",
+              "npc_message": "%2$s is suddenly forced away from %1$s!"
+            }
           ]
         }
       ]
@@ -64,18 +90,19 @@
     "copy-from": "spell_base",
     "type": "ARMOR",
     "name": { "str": "shrouded aura" },
-    "description": "A strange radiance permeating your body, obscuring your life force from the undead.",
+    "description": "A strange radiance permeating your body, obscuring your life force from the undead.  You will be invisible to them, but not to other creatures, and they will still be able to hear and smell you.",
     "color": "white",
-    "relic_data": {
-      "passive_effects": [
-        {
-          "has": "WORN",
-          "condition": "ALWAYS",
-          "mutations": [ "ARCANA_LIFE_SIGN_SUPPRESSION" ],
-          "values": [ { "value": "REGEN_HP", "multiply": -1.0 } ]
-        }
-      ]
-    },
+    "relic_data": { "passive_effects": [ { "has": "WORN", "condition": "ALWAYS", "mutations": [ "ARCANA_LIFE_SIGN_SUPPRESSION" ] } ] },
+    "extend": { "flags": [ "ONLY_ONE", "NO_TAKEOFF" ] }
+  },
+  {
+    "id": "halo_fadedaura",
+    "copy-from": "spell_base",
+    "type": "ARMOR",
+    "name": { "str": "faded halo" },
+    "description": "A strange radiance permeating your body, hiding your aura from otherworldly creatures in exchange for being more visible to wildlife and the undead.",
+    "color": "white",
+    "relic_data": { "passive_effects": [ { "has": "WORN", "condition": "ALWAYS", "mutations": [ "ARCANA_TRANSCENDANT_AURA" ] } ] },
     "extend": { "flags": [ "ONLY_ONE", "NO_TAKEOFF" ] }
   },
   {
@@ -117,7 +144,8 @@
             { "value": "ARMOR_CUT", "multiply": -0.5 },
             { "value": "ARMOR_ELEC", "multiply": -0.5 },
             { "value": "ARMOR_HEAT", "multiply": -0.5 },
-            { "value": "ARMOR_STAB", "multiply": -0.5 }
+            { "value": "ARMOR_STAB", "multiply": -0.5 },
+            { "value": "ARMOR_BULLET", "multiply": -0.5 }
           ]
         }
       ]
@@ -141,7 +169,7 @@
   },
   {
     "id": "amulet_exotic",
-    "type": "TOOL_ARMOR",
+    "type": "ARMOR",
     "name": { "str": "exotic amulet" },
     "description": "A makeshift necklace with a single gem, a charm worked from some manner of unnatural material.",
     "weight": "60 g",
@@ -186,7 +214,7 @@
         {
           "has": "WORN",
           "condition": "ALWAYS",
-          "values": [ { "value": "REGEN_MANA", "multiply": 0.025 }, { "value": "MAX_MANA", "multiply": 0.025 } ]
+          "values": [ { "value": "MANA_REGEN", "multiply": 0.025 }, { "value": "MANA_CAP", "multiply": 0.025 } ]
         }
       ]
     },
@@ -242,8 +270,10 @@
     "color": "light_red",
     "covers": [ "torso" ],
     "coverage": 15,
-    "encumbrance": 15,
-    "storage": 250,
+    "rigid": false,
+    "encumbrance": 0,
+    "max_encumbrance": 25,
+    "storage": "50 L",
     "material_thickness": 1,
     "weight_capacity_modifier": 2,
     "relic_data": {
@@ -256,7 +286,7 @@
               "id": "arcana_react_satchel_attention",
               "hit_self": true,
               "once_in": 50,
-              "message": "You feel like something is watching you...",
+              "message": "You feel like something is watching you…",
               "npc_message": "A strange aura of malice seems to briefly surround %1$s."
             },
             {

@@ -24,9 +24,29 @@
     "type": "item_group",
     "subtype": "distribution",
     "entries": [
-      { "item": "book_hexenhammer", "prob": 1 },
-      { "item": "book_scrollcraft", "prob": 1 },
-      { "item": "book_sacrifice", "prob": 1 }
+      {
+        "distribution": [
+          { "item": "book_hexenhammer", "prob": 20 },
+          { "item": "book_scrollcraft", "prob": 10 },
+          { "item": "book_sacrifice", "prob": 5 }
+        ],
+        "prob": 1
+      }
+    ]
+  },
+  {
+    "id": "cathedral_archives",
+    "type": "item_group",
+    "subtype": "collection",
+    "entries": [
+      {
+        "distribution": [
+          { "item": "book_hexenhammer", "prob": 20 },
+          { "item": "book_scrollcraft", "prob": 10 },
+          { "item": "book_sacrifice", "prob": 5 }
+        ],
+        "prob": 10
+      }
     ]
   },
   {
@@ -98,21 +118,12 @@
     "items": [ [ "offering_chalice", 5 ], [ "blood_athame", 5 ], [ "dragonblood_mutagen", 1 ] ]
   },
   {
-    "id": "vault",
+    "id": "vault_good",
     "type": "item_group",
     "items": [
       { "group": "magic_books", "prob": 25 },
-      [ "arcanemap", 10 ],
-      [ "hexenhammer", 5 ],
-      [ "offering_chalice", 5 ],
-      [ "blood_athame", 5 ],
-      [ "mana_gem", 2 ],
-      [ "mana_gem_blood", 2 ],
-      [ "mana_gem_dull", 1 ],
-      [ "totem_elecresist", 1 ],
-      [ "totem_clairvoyance", 1 ],
-      [ "totem_insight", 1 ],
-      [ "totem_lightning", 1 ]
+      { "group": "autodoc_installation_magitech", "prob": 10 },
+      { "group": "vault_magic_item_stash", "prob": 10 }
     ]
   },
   {
@@ -128,6 +139,7 @@
       { "item": "revenant_crown", "prob": 1 },
       { "item": "gauntlets_necro", "prob": 1 },
       { "item": "thunder_sigil", "prob": 1 },
+      { "item": "shrike_misericorde", "prob": 1 },
       { "item": "brooch_iridescent", "prob": 3 }
     ]
   },
@@ -210,6 +222,7 @@
     "id": "science",
     "type": "item_group",
     "items": [
+      { "group": "autodoc_installation_magitech", "prob": 5 },
       { "group": "lab_misc_anomalous_items", "prob": 5 },
       { "group": "arcana_hunt_random", "prob": 10 },
       [ "tindalos_whistle", 1 ],
@@ -267,7 +280,8 @@
       [ "bio_rift_focus_projector", 1 ],
       [ "bio_essence_surge_cell", 1 ],
       [ "bio_temporal_stimulation", 1 ],
-      [ "bio_life_sign_suppression", 1 ]
+      [ "bio_life_sign_suppression", 1 ],
+      [ "bio_kinetic_amplifier", 1 ]
     ]
   },
   {
@@ -333,5 +347,23 @@
     "id": "ammo_shotgun_modern_handloads",
     "subtype": "distribution",
     "entries": [ { "item": "reloaded_shot_00_arcana", "prob": 25 } ]
+  },
+  {
+    "type": "item_group",
+    "id": "autodoc_installation_programs",
+    "subtype": "distribution",
+    "entries": [ { "group": "autodoc_installation_magitech" } ]
+  },
+  {
+    "type": "item_group",
+    "id": "bionics_bank_vault",
+    "subtype": "distribution",
+    "entries": [ { "group": "lab_magitech_bionics", "prob": 25 } ]
+  },
+  {
+    "type": "item_group",
+    "id": "dissection",
+    "subtype": "distribution",
+    "entries": [ { "group": "autodoc_installation_magitech", "prob": 5 } ]
   }
 ]

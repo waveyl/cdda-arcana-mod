@@ -10,6 +10,11 @@
     "flags": [ "RISK_HIGH" ]
   },
   {
+    "type": "overmap_terrain",
+    "id": "curious_structure_2",
+    "copy-from": "curious_structure"
+  },
+  {
     "id": "curious_structure_roof",
     "type": "overmap_terrain",
     "name": "curious structure roof",
@@ -17,6 +22,11 @@
     "color": "i_light_red",
     "looks_like": "church_roof",
     "see_cost": 5
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "curious_structure_roof_2",
+    "copy-from": "curious_structure_roof"
   },
   {
     "id": "curious_structure_b",
@@ -28,6 +38,11 @@
     "see_cost": 5
   },
   {
+    "type": "overmap_terrain",
+    "id": "curious_structure_b_2",
+    "copy-from": "curious_structure_b"
+  },
+  {
     "id": "curious_structure_b2",
     "type": "overmap_terrain",
     "name": "eerie cavern",
@@ -37,14 +52,27 @@
     "see_cost": 5
   },
   {
+    "type": "overmap_terrain",
+    "id": "curious_structure_b2_2",
+    "copy-from": "curious_structure_b2"
+  },
+  {
     "id": "strange_grove",
     "type": "overmap_terrain",
-    "name": "strange grove",
-    "sym": "T",
+    "name": "overgrown cabin",
+    "sym": "C",
     "color": "i_light_green",
-    "looks_like": "triffid_grove",
+    "looks_like": "cabin_strange",
     "see_cost": 5,
     "flags": [ "RISK_HIGH" ]
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "strange_grove_2",
+    "copy-from": "strange_grove",
+    "name": "strange grove",
+    "sym": "T",
+    "looks_like": "triffid_grove"
   },
   {
     "id": "grove_ruins",
@@ -54,6 +82,12 @@
     "color": "i_green",
     "looks_like": "triffid_roots",
     "see_cost": 5
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "grove_ruins_2",
+    "copy-from": "grove_ruins",
+    "name": "strange cavern"
   },
   {
     "id": "impact_site",
@@ -234,6 +268,11 @@
   {
     "type": "overmap_terrain",
     "id": "arcanist_basement",
+    "copy-from": "generic_city_house_basement"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "arcanist_basement_2",
     "copy-from": "generic_city_house_basement"
   },
   {
@@ -422,7 +461,7 @@
     "name": "house",
     "copy-from": "generic_city_building",
     "color": "light_green",
-    "looks_like": "house",
+    "looks_like": "house_01",
     "see_cost": 2,
     "flags": [ "SIDEWALK", "RISK_HIGH" ]
   },
@@ -434,6 +473,18 @@
     "color": "light_green",
     "looks_like": "house_roof",
     "see_cost": 2
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "house_arcana_2",
+    "name": "house",
+    "copy-from": "house_arcana"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "house_arcana_roof_2",
+    "name": "house roof",
+    "copy-from": "house_arcana_roof"
   },
   {
     "id": "arcana_field_anomalous_buffer",
@@ -513,6 +564,16 @@
   },
   {
     "type": "overmap_terrain",
+    "id": "microlab_arcana_rock_connector",
+    "copy-from": "microlab_generic_surface_connector"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "microlab_arcana_surface_connector",
+    "copy-from": "microlab_generic_surface_connector"
+  },
+  {
+    "type": "overmap_terrain",
     "id": "microlab_arcana_server_room",
     "name": "science lab server room",
     "sym": "S",
@@ -520,6 +581,16 @@
     "looks_like": "microlab_generic",
     "see_cost": 5,
     "flags": [ "NO_ROTATE", "RISK_HIGH" ]
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "arcana_warehouse_lab",
+    "copy-from": "warehouse"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "arcana_warehouse_lab_roof",
+    "copy-from": "warehouse_roof"
   },
   {
     "type": "overmap_terrain",

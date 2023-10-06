@@ -4,14 +4,18 @@
     "id": "Curious Structure",
     "overmaps": [
       { "point": [ 0, 0, 0 ], "overmap": "curious_structure_north" },
+      { "point": [ 0, 1, 0 ], "overmap": "curious_structure_2_north" },
       { "point": [ 0, 0, -1 ], "overmap": "curious_structure_b_north" },
+      { "point": [ 0, 1, -1 ], "overmap": "curious_structure_b_2_north" },
       { "point": [ 0, 0, -2 ], "overmap": "curious_structure_b2_north" },
-      { "point": [ 0, 0, 1 ], "overmap": "curious_structure_roof_north" }
+      { "point": [ 0, 1, -2 ], "overmap": "curious_structure_b2_2_north" },
+      { "point": [ 0, 0, 1 ], "overmap": "curious_structure_roof_north" },
+      { "point": [ 0, 1, 1 ], "overmap": "curious_structure_roof_2_north" }
     ],
     "locations": [ "field", "forest" ],
     "city_distance": [ 20, -1 ],
     "city_sizes": [ 0, 12 ],
-    "occurrences": [ 1, 1 ],
+    "occurrences": [ 50, 100 ],
     "flags": [ "CLASSIC", "WILDERNESS", "UNIQUE", "ELECTRIC_GRID" ]
   },
   {
@@ -19,12 +23,14 @@
     "id": "Strange Grove",
     "overmaps": [
       { "point": [ 0, 0, 0 ], "overmap": "strange_grove_north" },
-      { "point": [ 0, 0, -1 ], "overmap": "grove_ruins_north" }
+      { "point": [ 0, 1, 0 ], "overmap": "strange_grove_2_north" },
+      { "point": [ 0, 0, -1 ], "overmap": "grove_ruins_north" },
+      { "point": [ 0, 1, -1 ], "overmap": "grove_ruins_2_north" }
     ],
     "locations": [ "forest" ],
     "city_distance": [ 0, -1 ],
     "city_sizes": [ 0, 12 ],
-    "occurrences": [ 1, 1 ],
+    "occurrences": [ 50, 100 ],
     "flags": [ "CLASSIC", "WILDERNESS", "UNIQUE" ]
   },
   {
@@ -45,7 +51,7 @@
     "locations": [ "field", "forest", "swamp" ],
     "city_distance": [ 20, -1 ],
     "city_sizes": [ 0, 12 ],
-    "occurrences": [ 1, 1 ],
+    "occurrences": [ 50, 100 ],
     "flags": [ "CLASSIC", "WILDERNESS", "UNIQUE" ],
     "spawns": { "group": "GROUP_ARCHON", "population": [ 150, 300 ], "radius": [ 20, 40 ] }
   },
@@ -69,7 +75,7 @@
     "locations": [ "forest", "swamp" ],
     "city_distance": [ 20, -1 ],
     "city_sizes": [ 0, 12 ],
-    "occurrences": [ 1, 1 ],
+    "occurrences": [ 50, 100 ],
     "flags": [ "CLASSIC", "WILDERNESS", "UNIQUE", "ELECTRIC_GRID" ]
   },
   {
@@ -78,8 +84,8 @@
     "overmaps": [ { "point": [ 0, 0, 0 ], "overmap": "shrine_anomaly_north" } ],
     "locations": [ "wilderness", "swamp" ],
     "city_distance": [ 20, -1 ],
-    "occurrences": [ 0, 1 ],
-    "flags": [ "CLASSIC", "WILDERNESS" ]
+    "occurrences": [ 50, 100 ],
+    "flags": [ "CLASSIC", "WILDERNESS", "UNIQUE" ]
   },
   {
     "type": "overmap_special",
@@ -87,8 +93,8 @@
     "overmaps": [ { "point": [ 0, 0, 0 ], "overmap": "shrine_anomaly_2_north" } ],
     "locations": [ "wilderness", "swamp" ],
     "city_distance": [ 20, -1 ],
-    "occurrences": [ 0, 1 ],
-    "flags": [ "CLASSIC", "WILDERNESS" ]
+    "occurrences": [ 50, 100 ],
+    "flags": [ "CLASSIC", "WILDERNESS", "UNIQUE" ]
   },
   {
     "type": "overmap_special",
@@ -96,8 +102,8 @@
     "overmaps": [ { "point": [ 0, 0, 0 ], "overmap": "shrine_anomaly_3_north" } ],
     "locations": [ "wilderness", "swamp" ],
     "city_distance": [ 20, -1 ],
-    "occurrences": [ 0, 1 ],
-    "flags": [ "CLASSIC", "WILDERNESS" ]
+    "occurrences": [ 50, 100 ],
+    "flags": [ "CLASSIC", "WILDERNESS", "UNIQUE" ]
   },
   {
     "type": "overmap_special",
@@ -107,11 +113,11 @@
       { "point": [ 0, 0, 1 ], "overmap": "arcana_hermitage_2_north" },
       { "point": [ 0, 0, 2 ], "overmap": "arcana_hermitage_roof_north" }
     ],
-    "connections": [ { "point": [ 0, 1, 0 ], "terrain": "road" } ],
+    "connections": [ { "point": [ 0, 1, 0 ], "connection": "local_road" } ],
     "locations": [ "wilderness" ],
     "city_distance": [ 16, -1 ],
     "city_sizes": [ 0, 12 ],
-    "occurrences": [ 90, 100 ],
+    "occurrences": [ 50, 100 ],
     "flags": [ "CLASSIC", "WILDERNESS", "UNIQUE", "ELECTRIC_GRID" ]
   },
   {
@@ -174,7 +180,7 @@
       { "point": [ 1, 4, 0 ], "overmap": "field" },
       { "point": [ 2, 4, 0 ], "overmap": "field" }
     ],
-    "connections": [ { "point": [ 0, 2, 0 ], "terrain": "road" } ],
+    "connections": [ { "point": [ 0, 2, 0 ], "connection": "local_road" } ],
     "locations": [ "land" ],
     "city_distance": [ 10, -1 ],
     "city_sizes": [ 1, 20 ],
@@ -191,7 +197,7 @@
       { "point": [ 0, 0, 0 ], "overmap": "sanguine_holdout_1_north" },
       { "point": [ 0, 0, -1 ], "overmap": "sanguine_holdout_b1_north" }
     ],
-    "connections": [ { "point": [ 0, -1, 0 ], "terrain": "road", "existing": true } ],
+    "connections": [ { "point": [ 0, -1, 0 ], "connection": "local_road", "existing": true } ],
     "locations": [ "forest" ],
     "city_distance": [ 10, -1 ],
     "city_sizes": [ 1, 20 ],
@@ -206,7 +212,7 @@
       { "point": [ 0, 0, 1 ], "overmap": "sanguine_holdout_roof_north" },
       { "point": [ 0, 0, 0 ], "overmap": "sanguine_holdout_2_north" }
     ],
-    "connections": [ { "point": [ 0, -1, 0 ], "terrain": "road", "existing": true } ],
+    "connections": [ { "point": [ 0, -1, 0 ], "connection": "local_road", "existing": true } ],
     "locations": [ "forest" ],
     "city_distance": [ 10, -1 ],
     "city_sizes": [ 1, 20 ],
@@ -281,7 +287,7 @@
       { "point": [ 0, 0, 0 ], "overmap": "s_gas_arcana_bandit_north" },
       { "point": [ 0, 0, 1 ], "overmap": "s_gas_rural_roof_north" }
     ],
-    "connections": [ { "point": [ 0, -1, 0 ], "terrain": "road", "existing": true } ],
+    "connections": [ { "point": [ 0, -1, 0 ], "connection": "local_road", "existing": true } ],
     "locations": [ "land", "swamp" ],
     "city_distance": [ 10, -1 ],
     "city_sizes": [ 1, 20 ],
@@ -330,13 +336,28 @@
       { "point": [ 3, 4, -2 ], "overmap": "microlab_rock_border" },
       { "point": [ 4, 4, -2 ], "overmap": "microlab_rock_border" }
     ],
-    "connections": [ { "point": [ 2, 0, 0 ], "terrain": "road", "connection": "local_road", "from": [ 2, 1, 0 ] } ],
+    "connections": [ { "point": [ 2, 0, 0 ], "connection": "local_road", "from": [ 2, 1, 0 ] } ],
     "locations": [ "land", "swamp" ],
     "city_distance": [ 1, -1 ],
     "city_sizes": [ 1, -1 ],
     "//": "Doesn't naturally spawn, generated by a mission instead.",
     "occurrences": [ 0, 0 ],
     "flags": [ "CLASSIC", "WILDERNESS" ]
+  },
+  {
+    "type": "overmap_special",
+    "id": "Lab_arcana_warehouse",
+    "overmaps": [
+      { "point": [ 0, 0, 0 ], "overmap": "arcana_warehouse_lab_north" },
+      { "point": [ 0, 0, 1 ], "overmap": "arcana_warehouse_lab_north" }
+    ],
+    "connections": [ { "point": [ 0, -1, 0 ], "connection": "local_road", "existing": true } ],
+    "locations": [ "land", "swamp" ],
+    "city_distance": [ 5, -1 ],
+    "city_sizes": [ 1, -1 ],
+    "//": "Doesn't naturally spawn, generated by a mission instead.",
+    "occurrences": [ 0, 0 ],
+    "flags": [ "CLASSIC", "WILDERNESS", "ELECTRIC_GRID" ]
   },
   {
     "type": "overmap_special",
@@ -381,7 +402,7 @@
       { "point": [ 1, 1, -3 ], "overmap": "lab_arcane_4_5_north" },
       { "point": [ 2, 1, -3 ], "overmap": "lab_arcane_4_6_north" }
     ],
-    "connections": [ { "point": [ 0, -1, 0 ], "terrain": "road", "connection": "local_road", "from": [ 0, 0, 0 ] } ],
+    "connections": [ { "point": [ 0, -1, 0 ], "connection": "local_road", "from": [ 0, 0, 0 ] } ],
     "locations": [ "land", "swamp" ],
     "city_distance": [ 1, -1 ],
     "city_sizes": [ 1, -1 ],

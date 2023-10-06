@@ -14,7 +14,7 @@
     "count": 1,
     "ammo_type": "essence_type",
     "effects": [ "NEVER_MISFIRES", "NON-FOULING" ],
-    "fuel": { "energy": 120 }
+    "fuel": { "energy": 150 }
   },
   {
     "id": "essence_blood",
@@ -30,7 +30,7 @@
     "count": 1,
     "ammo_type": "essence_blood_type",
     "effects": [ "NEVER_MISFIRES", "NON-FOULING" ],
-    "fuel": { "energy": 40 }
+    "fuel": { "energy": 50 }
   },
   {
     "id": "essence_dull",
@@ -46,7 +46,7 @@
     "count": 1,
     "ammo_type": "essence_dull_type",
     "effects": [ "NEVER_MISFIRES", "NON-FOULING" ],
-    "fuel": { "energy": 4 }
+    "fuel": { "energy": 5 }
   },
   {
     "id": "essence_pure",
@@ -63,7 +63,7 @@
     "count": 1,
     "ammo_type": "essence_pure_type",
     "effects": [ "NEVER_MISFIRES", "NON-FOULING" ],
-    "fuel": { "energy": 1200 }
+    "fuel": { "energy": 1500 }
   },
   {
     "id": "essence_fake",
@@ -93,12 +93,13 @@
     "bashing": 6,
     "cutting": 2,
     "ammo_type": "arrow",
-    "damage": { "damage_type": "stab", "armor_penetration": 1, "damage_multiplier": 1.3 },
-    "dispersion": 140,
+    "damage": { "damage_type": "stab", "damage_multiplier": 1.0, "armor_penetration": 1 },
+    "dispersion": 150,
+    "range": 2,
     "loudness": 0,
-    "count": 5,
+    "count": 10,
     "show_stats": true,
-    "effects": [ "RECOVER_50" ]
+    "dont_recover_one_in": 50
   },
   {
     "type": "AMMO",
@@ -115,12 +116,13 @@
     "bashing": 6,
     "cutting": 2,
     "ammo_type": "bolt",
-    "damage": { "damage_type": "stab", "damage_multiplier": 1.3, "armor_penetration": 1 },
-    "dispersion": 150,
+    "damage": { "damage_type": "stab", "damage_multiplier": 1.0, "armor_penetration": 1 },
+    "dispersion": 125,
+    "range": 1,
     "loudness": 0,
-    "count": 5,
+    "count": 10,
     "show_stats": true,
-    "effects": [ "RECOVER_50" ]
+    "dont_recover_one_in": 50
   },
   {
     "type": "AMMO",
@@ -129,7 +131,7 @@
     "symbol": "=",
     "color": "green",
     "looks_like": "arrow_arcana_unpowered",
-    "description": "An arrow radiating strange energy, tipped with a sliver of otherworldly material.  Capable of immolating targets on impact.  Stands a good chance of remaining intact once fired.",
+    "description": "An arrow radiating strange energy, tipped with a sliver of otherworldly material.  Capable of immolating targets on impact.  Stands a very good chance of remaining intact once fired.",
     "material": [ "wood", "essencemat" ],
     "volume": "125 ml",
     "price_postapoc": "250 cent",
@@ -137,13 +139,16 @@
     "bashing": 6,
     "cutting": 2,
     "ammo_type": "arrow",
-    "damage": { "damage_type": "heat", "amount": 12, "armor_penetration": 2 },
+    "//": "Physical ammo with essence worked into them deal double the normal damage, i.e. 5 per dull essence equivalent instead of 2.5 normally seen with magic ranged weapons.",
+    "damage": { "damage_type": "heat", "amount": 15, "armor_penetration": 2 },
+    "//2": "Powered exotic arrows have 125 dispersion, range equal to half their damage bonus.",
     "dispersion": 125,
-    "range": 1,
+    "range": 8,
     "loudness": 0,
-    "count": 5,
+    "count": 10,
     "show_stats": true,
-    "effects": [ "RECOVER_40", "INCENDIARY", "AMMO_ARCANA_FIRE_EFFECT", "NO_EMBED" ]
+    "dont_recover_one_in": 50,
+    "effects": [ "IGNITE", "AMMO_ARCANA_FIRE_EFFECT" ]
   },
   {
     "type": "AMMO",
@@ -152,7 +157,7 @@
     "symbol": "=",
     "color": "green",
     "looks_like": "bolt_arcana_unpowered",
-    "description": "A simple fletched wooden crossbow bolt, tipped with a sliver of otherworldly material.  Capable of immolating targets on impact.  Stands a decent chance of remaining intact once fired.",
+    "description": "A simple fletched wooden crossbow bolt, tipped with a sliver of otherworldly material.  Capable of immolating targets on impact.  Stands a very good chance of remaining intact once fired.",
     "material": [ "wood", "essencemat" ],
     "volume": "125 ml",
     "price_postapoc": "250 cent",
@@ -160,12 +165,15 @@
     "bashing": 6,
     "cutting": 2,
     "ammo_type": "bolt",
-    "damage": { "damage_type": "heat", "amount": 12, "armor_penetration": 2 },
-    "dispersion": 110,
+    "damage": { "damage_type": "heat", "amount": 15, "armor_penetration": 2 },
+    "//": "Powered exotic bolts have 100 dispersion, range equal to 40% their damage bonus.",
+    "dispersion": 100,
+    "range": 6,
     "loudness": 0,
-    "count": 5,
+    "count": 10,
     "show_stats": true,
-    "effects": [ "RECOVER_40", "INCENDIARY", "AMMO_ARCANA_FIRE_EFFECT", "NO_EMBED" ]
+    "dont_recover_one_in": 50,
+    "effects": [ "IGNITE", "AMMO_ARCANA_FIRE_EFFECT" ]
   },
   {
     "type": "AMMO",
@@ -174,7 +182,7 @@
     "symbol": "=",
     "color": "green",
     "looks_like": "arrow_arcana_unpowered",
-    "description": "An arrow radiating strange energy, tipped with a sliver of otherworldly material.  Capable of stunning targets on impact.  Stands a decent chance of remaining intact once fired.",
+    "description": "An arrow radiating strange energy, tipped with a sliver of otherworldly material.  Capable of stunning targets on impact.  Stands a very good chance of remaining intact once fired.",
     "material": [ "wood", "essencemat" ],
     "volume": "125 ml",
     "price_postapoc": "250 cent",
@@ -182,13 +190,14 @@
     "bashing": 6,
     "cutting": 2,
     "ammo_type": "arrow",
-    "damage": { "damage_type": "cold", "amount": 16, "armor_penetration": 3 },
+    "damage": { "damage_type": "cold", "amount": 20, "armor_penetration": 3 },
     "dispersion": 125,
-    "range": 1,
+    "range": 10,
     "loudness": 0,
-    "count": 5,
+    "count": 10,
     "show_stats": true,
-    "effects": [ "RECOVER_30", "BEANBAG", "AMMO_ARCANA_WATER_EFFECT", "NO_EMBED" ]
+    "dont_recover_one_in": 50,
+    "effects": [ "BEANBAG", "AMMO_ARCANA_WATER_EFFECT" ]
   },
   {
     "type": "AMMO",
@@ -197,7 +206,7 @@
     "symbol": "=",
     "color": "green",
     "looks_like": "bolt_arcana_unpowered",
-    "description": "A simple fletched wooden crossbow bolt, tipped with a sliver of otherworldly material.  Capable of stunning targets on impact.  Stands a decent chance of remaining intact once fired.",
+    "description": "A simple fletched wooden crossbow bolt, tipped with a sliver of otherworldly material.  Capable of stunning targets on impact.  Stands a very good chance of remaining intact once fired.",
     "material": [ "wood", "essencemat" ],
     "volume": "125 ml",
     "price_postapoc": "250 cent",
@@ -205,12 +214,14 @@
     "bashing": 6,
     "cutting": 2,
     "ammo_type": "bolt",
-    "damage": { "damage_type": "cold", "amount": 16, "armor_penetration": 3 },
-    "dispersion": 110,
+    "damage": { "damage_type": "cold", "amount": 20, "armor_penetration": 3 },
+    "dispersion": 100,
+    "range": 8,
     "loudness": 0,
-    "count": 5,
+    "count": 10,
     "show_stats": true,
-    "effects": [ "RECOVER_30", "BEANBAG", "AMMO_ARCANA_WATER_EFFECT", "NO_EMBED" ]
+    "dont_recover_one_in": 50,
+    "effects": [ "BEANBAG", "AMMO_ARCANA_WATER_EFFECT" ]
   },
   {
     "type": "AMMO",
@@ -219,7 +230,7 @@
     "symbol": "=",
     "color": "green",
     "looks_like": "arrow_arcana_unpowered",
-    "description": "An arrow radiating strange energy, tipped with a sliver of otherworldly material.  Capable of slowing and corroding targets on impact, leaving acid in its wake.  Stands a somewhat low chance of remaining intact once fired.",
+    "description": "An arrow radiating strange energy, tipped with a sliver of otherworldly material.  Capable of slowing and corroding targets on impact, leaving acid in its wake.  Stands a very good chance of remaining intact once fired.",
     "material": [ "wood", "essencemat" ],
     "volume": "125 ml",
     "price_postapoc": "250 cent",
@@ -227,13 +238,14 @@
     "bashing": 6,
     "cutting": 2,
     "ammo_type": "arrow",
-    "damage": { "damage_type": "acid", "amount": 20, "armor_penetration": 4 },
+    "damage": { "damage_type": "acid", "amount": 25, "armor_penetration": 4 },
     "dispersion": 125,
-    "range": 1,
+    "range": 13,
     "loudness": 0,
-    "count": 5,
+    "count": 10,
     "show_stats": true,
-    "effects": [ "RECOVER_20", "PARALYZEPOISON", "AMMO_ARCANA_EARTH_EFFECT", "NO_EMBED" ]
+    "dont_recover_one_in": 50,
+    "effects": [ "PARALYZEPOISON", "AMMO_ARCANA_EARTH_EFFECT" ]
   },
   {
     "type": "AMMO",
@@ -242,7 +254,7 @@
     "symbol": "=",
     "color": "green",
     "looks_like": "bolt_arcana_unpowered",
-    "description": "A simple fletched wooden crossbow bolt, tipped with a sliver of otherworldly material.  Capable of slowing and corroding targets on impact, leaving acid in its wake.  Stands a somewhat low chance of remaining intact once fired.",
+    "description": "A simple fletched wooden crossbow bolt, tipped with a sliver of otherworldly material.  Capable of slowing and corroding targets on impact, leaving acid in its wake.  Stands a very good chance of remaining intact once fired.",
     "material": [ "wood", "essencemat" ],
     "volume": "125 ml",
     "price_postapoc": "250 cent",
@@ -250,12 +262,14 @@
     "bashing": 6,
     "cutting": 2,
     "ammo_type": "bolt",
-    "damage": { "damage_type": "acid", "amount": 20, "armor_penetration": 4 },
-    "dispersion": 110,
+    "damage": { "damage_type": "acid", "amount": 25, "armor_penetration": 4 },
+    "dispersion": 100,
+    "range": 10,
     "loudness": 0,
-    "count": 5,
+    "count": 10,
     "show_stats": true,
-    "effects": [ "RECOVER_20", "PARALYZEPOISON", "AMMO_ARCANA_EARTH_EFFECT", "NO_EMBED" ]
+    "dont_recover_one_in": 50,
+    "effects": [ "PARALYZEPOISON", "AMMO_ARCANA_EARTH_EFFECT" ]
   },
   {
     "type": "AMMO",
@@ -264,7 +278,7 @@
     "symbol": "=",
     "color": "green",
     "looks_like": "arrow_arcana_unpowered",
-    "description": "An arrow radiating strange energy, tipped with a sliver of otherworldly material.  Capable of blinding targets on impact, leaving lightning in its wake.  Stands a low chance of remaining intact once fired.",
+    "description": "An arrow radiating strange energy, tipped with a sliver of otherworldly material.  Capable of blinding targets on impact, leaving lightning in its wake.  Stands a very good chance of remaining intact once fired.",
     "material": [ "wood", "essencemat" ],
     "volume": "125 ml",
     "price_postapoc": "250 cent",
@@ -272,13 +286,14 @@
     "bashing": 6,
     "cutting": 2,
     "ammo_type": "arrow",
-    "damage": { "damage_type": "electric", "amount": 32, "armor_penetration": 5 },
+    "damage": { "damage_type": "electric", "amount": 40, "armor_penetration": 5 },
     "dispersion": 125,
-    "range": 1,
+    "range": 20,
     "loudness": 0,
-    "count": 5,
+    "count": 10,
     "show_stats": true,
-    "effects": [ "RECOVER_10", "BLINDS_EYES", "WIDE", "AMMO_ARCANA_AIR_EFFECT", "NO_EMBED" ]
+    "dont_recover_one_in": 50,
+    "effects": [ "BLINDS_EYES", "WIDE", "AMMO_ARCANA_AIR_EFFECT" ]
   },
   {
     "type": "AMMO",
@@ -287,7 +302,7 @@
     "symbol": "=",
     "color": "green",
     "looks_like": "bolt_arcana_unpowered",
-    "description": "A simple fletched wooden crossbow bolt, tipped with a sliver of otherworldly material.  Capable of blinding targets on impact, leaving lightning in its wake.  Stands a low chance of remaining intact once fired.",
+    "description": "A simple fletched wooden crossbow bolt, tipped with a sliver of otherworldly material.  Capable of blinding targets on impact, leaving lightning in its wake.  Stands a very good chance of remaining intact once fired.",
     "material": [ "wood", "essencemat" ],
     "volume": "125 ml",
     "price_postapoc": "250 cent",
@@ -295,46 +310,53 @@
     "bashing": 6,
     "cutting": 2,
     "ammo_type": "bolt",
-    "damage": { "damage_type": "electric", "amount": 32, "armor_penetration": 5 },
-    "dispersion": 110,
+    "damage": { "damage_type": "electric", "amount": 40, "armor_penetration": 5 },
+    "dispersion": 100,
+    "range": 16,
     "loudness": 0,
-    "count": 5,
+    "count": 10,
     "show_stats": true,
-    "effects": [ "RECOVER_10", "BLINDS_EYES", "WIDE", "AMMO_ARCANA_AIR_EFFECT", "NO_EMBED" ]
+    "dont_recover_one_in": 50,
+    "effects": [ "BLINDS_EYES", "WIDE", "AMMO_ARCANA_AIR_EFFECT" ]
   },
   {
     "id": "reloaded_shot_00_arcana",
-    "copy-from": "reloaded_shot_00",
+    "copy-from": "shot_abstract",
     "type": "AMMO",
     "name": { "str": "purifying 00 shot" },
-    "description": "A handloaded shotgun shell, loaded with silver pellets and blessed with salt.  The addition of consecrated essence enhances its impact and turns each pellet into a mote of white-hot light when fired.  Immolates targets on impact and bypasses mundane armor, while leaving behind a dazzling glow.",
+    "description": "A handloaded shotgun shell, loaded with precious metals.  The addition of consecrated essence enhances its impact and focuses it into a burst of white-hot light when fired.  Immolates targets on impact and bypasses mundane armor, while leaving behind a dazzling glow.",
+    "//": "Likely rare to non-existent before the cataclysm.",
     "price": "0 cent",
     "price_postapoc": "9 USD",
-    "//": "Damage for purifying ammo is roughly equal to taking 2/3 the mundane version's damage, then adding damage based on amount of dull essence used per round.",
-    "damage": { "damage_type": "heat", "amount": 50, "armor_penetration": 10 },
-    "extend": { "effects": [ "INCENDIARY", "ARCANA_DAZZLE_SHOT" ] }
+    "range": 30,
+    "damage": { "damage_type": "heat", "amount": 60, "armor_penetration": 10 },
+    "extend": { "effects": [ "IGNITE", "SHOT", "ARCANA_DAZZLE_SHOT" ] }
   },
   {
     "id": "flintlock_shot_arcana",
     "copy-from": "flintlock_shot",
     "type": "AMMO",
     "name": { "str": "purifying paper shot cartridge" },
-    "description": "A black powder paper cartridge, loaded with silver pellets and blessed with salt.  The addition of consecrated essence enhances its impact and turns each pellet into a mote of white-hot light when fired.  Immolates targets on impact and bypasses mundane armor, while leaving behind a dazzling glow.",
-    "//": "Likely rare to non-existent before the cataclysm.",
+    "description": "A black powder paper cartridge, loaded with precious metals.  The addition of consecrated essence enhances its impact and focuses it into a burst of white-hot light when fired.  Immolates targets on impact and bypasses mundane armor, while leaving behind a dazzling glow.",
     "price": "0 cent",
     "price_postapoc": "15 USD",
+    "range": 12,
     "damage": { "damage_type": "heat", "amount": 50, "armor_penetration": 10 },
-    "extend": { "effects": [ "INCENDIARY", "ARCANA_DAZZLE_SHOT" ] }
+    "extend": { "effects": [ "IGNITE", "ARCANA_DAZZLE_SHOT" ] }
   },
   {
     "id": "blun_shot_arcana",
-    "copy-from": "blun_shot",
+    "copy-from": "blun_slug",
     "type": "AMMO",
     "name": { "str": "purifying blunderbuss shot" },
-    "description": "A prepared blunderbuss shot, loaded with silver scraps and blessed with salt.  The addition of consecrated essence enhances its impact and turns each pellet into a mote of white-hot light when fired.  Immolates targets on impact and bypasses mundane armor, while leaving behind a dazzling glow.",
+    "description": "A prepared blunderbuss shot, loaded with precious metals.  The addition of consecrated essence enhances its impact and focuses it into a burst of white-hot light when fired.  Immolates targets on impact and bypasses mundane armor, while leaving behind a dazzling glow.",
     "price": "0 cent",
     "price_postapoc": "1 USD",
-    "damage": { "damage_type": "heat", "amount": 75, "armor_penetration": 15 },
-    "extend": { "effects": [ "INCENDIARY", "ARCANA_DAZZLE_SHOT" ] }
+    "weight": "2 g",
+    "range": 9,
+    "dispersion": 30,
+    "recoil": 780,
+    "damage": { "damage_type": "heat", "amount": 80, "armor_penetration": 10 },
+    "extend": { "effects": [ "IGNITE", "SHOT", "ARCANA_DAZZLE_SHOT" ] }
   }
 ]

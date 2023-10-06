@@ -14,11 +14,9 @@
     "name": { "str": "silver glyph" },
     "description": "A silver emblem resembling a 16-pointed star in a circle.  You feel as though it could be a powerful arcane device, but there is no magic in it.  Yet.",
     "weight": "285 g",
-    "volume": "250 ml",
+    "volume": "100 ml",
     "price": "80 USD",
     "price_postapoc": "8 USD",
-    "to_hit": -3,
-    "bashing": 1,
     "material": [ "silver" ],
     "symbol": ",",
     "looks_like": "jade_brooch",
@@ -43,6 +41,7 @@
     "type": "GENERIC",
     "id": "graboid_fang",
     "category": "other",
+    "weapon_category": [ "KNIVES" ],
     "//": "Obtained from graboids, rarely from dark wyrms.",
     "name": { "str": "crystalline fang" },
     "description": "A short spike of grainy, dark ivory broken off from the maw of a massive wormlike creature.  Makes a poor melee weapon, or could be made into a trophy of some sort.",
@@ -55,8 +54,8 @@
     "techniques": [ "PRECISE" ],
     "volume": "500 ml",
     "cutting": 10,
-    "flags": [ "SPEAR", "SHEATH_KNIFE" ],
-    "price_postapoc": 500
+    "flags": [ "STAB", "SHEATH_KNIFE", "NO_SALVAGE" ],
+    "price_postapoc": "5 USD"
   },
   {
     "type": "GENERIC",
@@ -90,6 +89,7 @@
     "type": "GENERIC",
     "id": "iron_thorn",
     "category": "other",
+    "weapon_category": [ "KNIVES" ],
     "name": { "str": "iron thorn" },
     "description": "A curved, seven-inch spike resembling some sort of thorn or talon, with an otherworldly metallic shimmer to it.  Makes a mediocre melee weapon, or could be made into a trophy of some sort.",
     "weight": "860 g",
@@ -100,13 +100,14 @@
     "techniques": [ "PRECISE", "WBLOCK_1" ],
     "volume": "250 ml",
     "cutting": 10,
-    "flags": [ "SPEAR" ],
-    "price_postapoc": 500
+    "flags": [ "STAB", "SHEATH_KNIFE", "NO_SALVAGE" ],
+    "price_postapoc": "5 USD"
   },
   {
     "type": "GENERIC",
     "id": "dermatik_sting",
     "category": "other",
+    "weapon_category": [ "KNIVES" ],
     "//": "ID retained for compatibility reasons",
     "name": { "str": "barbed stinger" },
     "description": "An eight-inch barbed stinger, from some manner of monstrous creature.  Makes a mediocre melee weapon, or could be made into a trophy of some sort.",
@@ -119,8 +120,8 @@
     "techniques": [ "PRECISE", "DEF_DISARM" ],
     "volume": "250 ml",
     "cutting": 10,
-    "flags": [ "SPEAR", "MESSY" ],
-    "price_postapoc": 500
+    "flags": [ "STAB", "MESSY" ],
+    "price_postapoc": "5 USD"
   },
   {
     "type": "GENERIC",
@@ -186,6 +187,7 @@
     "type": "GENERIC",
     "id": "bone_twisted",
     "category": "other",
+    "weapon_category": [ "KNIVES" ],
     "name": { "str": "twisted bones", "str_pl": "twisted bones" },
     "weight": "225 g",
     "color": "white",
@@ -195,10 +197,10 @@
     "description": "A mangled spike of woven, fused-together bones.  It might be useful, or it could be made into a trophy of some sort.",
     "to_hit": -1,
     "cutting": 8,
-    "flags": [ "SPEAR" ],
+    "flags": [ "STAB", "NO_SALVAGE" ],
     "material": [ "bone", "hflesh" ],
     "volume": "250 ml",
-    "price_postapoc": 500
+    "price_postapoc": "5 USD"
   },
   {
     "type": "GENERIC",
@@ -211,6 +213,7 @@
     "name": { "str": "cracked knucklebones", "str_pl": "cracked knucklebones" },
     "description": "A few splintered chunks of finger bones from some sort of monstrous creature, torn away and stripped of flesh from the force of its unnatural death throes.  It might be useful, or it could be made into a trophy of some sort.",
     "price_postapoc": "5 USD",
+    "flags": [ "NO_SALVAGE" ],
     "material": [ "bone" ],
     "weight": "225 g",
     "volume": "250 ml"
@@ -226,6 +229,7 @@
     "name": { "str": "acrid fragment" },
     "description": "An discolored, leathery piece of hardened tissue broken off from an otherworldly monster, like a massive shed scale.  It might be useful, or it could be made into a trophy of some sort.",
     "price_postapoc": "5 USD",
+    "flags": [ "NO_SALVAGE" ],
     "material": [ "wyrmskin" ],
     "weight": "120 g",
     "volume": "250 ml",
@@ -236,6 +240,7 @@
     "type": "GENERIC",
     "id": "monster_fang",
     "category": "other",
+    "weapon_category": [ "KNIVES" ],
     "//": "Obtained from hunting horrors, flying polyps.  Rarely from krecks.",
     "name": { "str": "monstrous fang" },
     "description": "A long, curved spike of unnatural ivory, that feels lighter in the hand than it should.  Makes a poor melee weapon, or could be made into a trophy of some sort.",
@@ -247,8 +252,8 @@
     "techniques": [ "PRECISE", "RAPID" ],
     "volume": "500 ml",
     "cutting": 8,
-    "flags": [ "SPEAR", "SHEATH_KNIFE" ],
-    "price_postapoc": 500
+    "flags": [ "STAB", "SHEATH_KNIFE", "NO_SALVAGE" ],
+    "price_postapoc": "5 USD"
   },
   {
     "type": "GENERIC",
@@ -265,7 +270,7 @@
     "volume": "250 ml",
     "bashing": 1,
     "to_hit": -2,
-    "price_postapoc": 500
+    "price_postapoc": "5 USD"
   },
   {
     "type": "GENERIC",
@@ -289,7 +294,7 @@
     "symbol": "*",
     "color": "red",
     "name": { "str": "petrified heart" },
-    "description": "A vibrant red chunk of petrified flesh, torn free from some scaly abomination as it died.  It seems someone else had been trying to carve this thing from the beast's corpse before it reanimated, for whatever twisted ritual they where planning...",
+    "description": "A vibrant red chunk of petrified flesh, torn free from some scaly abomination as it died.  It seems someone else had been trying to carve this thing from the beast's corpse before it reanimated, for whatever twisted ritual they were planning…",
     "//": "The fact it has a pre-cata pricing is effectively a plot spoiler, but yes it was basically the primary focus of on major sect of the Sanguine Order.  Extremely valuable to a decent number of people who are now extremely dead.",
     "price": "80000 USD",
     "price_postapoc": "75 USD",
@@ -441,5 +446,80 @@
     "looks_like": "steel_plate",
     "color": "light_gray",
     "flags": [ "NO_SALVAGE", "TRADER_AVOID" ]
+  },
+  {
+    "id": "AID_bio_electrothermal_arc_projector",
+    "type": "GENERIC",
+    "copy-from": "AID_abstract",
+    "name": { "str_sp": "Electrothermal Arc Projector CBM installation data" },
+    "description": "Precise step-by-step instructions and other required data for installation of Electrothermal Arc Projector CBM, stored on a data card of proprietary form-factor, designed to be used extensively by an Autodoc, and allowing bionic installation with minimal failure chance.  Integrated security subroutine renders it unusable after installation."
+  },
+  {
+    "id": "AID_bio_rift_focus_projector",
+    "type": "GENERIC",
+    "copy-from": "AID_abstract",
+    "name": { "str_sp": "Rift Focus Projector CBM installation data" },
+    "description": "Precise step-by-step instructions and other required data for installation of Rift Focus Projector CBM, stored on a data card of proprietary form-factor, designed to be used extensively by an Autodoc, and allowing bionic installation with minimal failure chance.  Integrated security subroutine renders it unusable after installation."
+  },
+  {
+    "id": "AID_bio_essence_surge_cell",
+    "type": "GENERIC",
+    "copy-from": "AID_abstract",
+    "name": { "str_sp": "Essence Surge Cell CBM installation data" },
+    "description": "Precise step-by-step instructions and other required data for installation of Essence Surge Cell CBM, stored on a data card of proprietary form-factor, designed to be used extensively by an Autodoc, and allowing bionic installation with minimal failure chance.  Integrated security subroutine renders it unusable after installation."
+  },
+  {
+    "id": "AID_bio_temporal_stimulation",
+    "type": "GENERIC",
+    "copy-from": "AID_abstract",
+    "name": { "str_sp": "Temporal Stimulation CBM installation data" },
+    "description": "Precise step-by-step instructions and other required data for installation of Temporal Stimulation CBM, stored on a data card of proprietary form-factor, designed to be used extensively by an Autodoc, and allowing bionic installation with minimal failure chance.  Integrated security subroutine renders it unusable after installation."
+  },
+  {
+    "id": "AID_bio_life_sign_suppression",
+    "type": "GENERIC",
+    "copy-from": "AID_abstract",
+    "name": { "str_sp": "Life Sign Suppression CBM installation data" },
+    "description": "Precise step-by-step instructions and other required data for installation of Life Sign Suppression CBM, stored on a data card of proprietary form-factor, designed to be used extensively by an Autodoc, and allowing bionic installation with minimal failure chance.  Integrated security subroutine renders it unusable after installation."
+  },
+  {
+    "id": "AID_bio_kinetic_amplifier",
+    "type": "GENERIC",
+    "copy-from": "AID_abstract",
+    "name": { "str_sp": "Kinetic Amplifier CBM CBM installation data" },
+    "description": "Precise step-by-step instructions and other required data for installation of Kinetic Amplifier CBM CBM, stored on a data card of proprietary form-factor, designed to be used extensively by an Autodoc, and allowing bionic installation with minimal failure chance.  Integrated security subroutine renders it unusable after installation."
+  },
+  {
+    "type": "GENERIC",
+    "category": "weapons",
+    "id": "bio_kinetic_amplifier_weapon",
+    "weapon_category": [ "FIST_WEAPONS" ],
+    "name": { "str_sp": "kinetic amplifier" },
+    "description": "A band of steel slid into place over your knuckles, etched with strange markings.  When used as an unarmed weapon, it can give your strikes the ability to send victims flying, with amplified damage and armor penetration.  Its impacts have a chance of letting loose a blinding flashbang effect, making this weapon a double-edged sword without protection.",
+    "color": "light_gray",
+    "symbol": "{",
+    "material": [ "steel" ],
+    "volume": "250 ml",
+    "weight": "300 g",
+    "bashing": 24,
+    "flags": [ "UNARMED_WEAPON", "NO_DROP", "NO_UNWIELD", "UNBREAKABLE_MELEE", "TRADER_AVOID" ],
+    "qualities": [ [ "HAMMER", 1 ] ],
+    "techniques": [ "WBLOCK_1", "tec_weapon_kinetic_knockback" ],
+    "relic_data": {
+      "passive_effects": [
+        {
+          "has": "WIELD",
+          "condition": "ALWAYS",
+          "hit_you_effect": [
+            {
+              "id": "arcana_react_kinetic_amplifier_flashbang",
+              "once_in": 10,
+              "message": "Your kinetic resonates with a blinding flash and thunderous sound!",
+              "npc_message": "%1$s suddenly gives off a blinding flash and thunderous sound!"
+            }
+          ]
+        }
+      ]
+    }
   }
 ]

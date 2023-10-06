@@ -11,7 +11,7 @@
             { "not": { "u_has_var": "nicholas_mission_2_mid", "type": "mission", "context": "rural_church", "value": "yes" } },
             { "u_has_var": "necro_comms_permission", "type": "flag", "context": "rural_church", "value": "yes" },
             { "u_has_mission": "MISSION_CF_PURIFIER_1_2" },
-            { "u_is_wearing": "badge_marshal" }
+            { "u_has_var": "npc_necro_gave_clearance", "value": "yes", "type": "dialogue", "context": "necropolis" }
           ]
         }
       }
@@ -161,7 +161,7 @@
       },
       {
         "text": "They had their reasons for acting as they do.  They do not know the truth of what has ruined this world, but they did what they could.  This is an opportunity to gain valuable insight into how things could be set right.",
-        "condition": { "u_has_any_trait": [ "PROF_CHALICE", "THRESH_VEIL" ] },
+        "condition": { "u_has_any_trait": [ "PROF_CHALICE", "PROF_CHALICE2", "THRESH_VEIL" ] },
         "topic": "TALK_OLD_GUARD_NEC_COMMO_NICHOLAS_5_2"
       },
       {

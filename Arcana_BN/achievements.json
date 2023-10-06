@@ -128,6 +128,27 @@
     "drop_fields": [ "effect" ]
   },
   {
+    "id": "achievement_arcana_divine_sealing_charm",
+    "type": "achievement",
+    "name": { "str": "<color_cyan>(Arcana)</color> Blood, Oath, and Flame" },
+    "description": "Help the Cleansing Flame put the combined research of the other arcanist orders to good use.",
+    "hidden_by": [ "achievement_arcana_npc_nicholas" ],
+    "requirements": [ { "event_statistic": "num_avatar_arcana_divine_sealing_charm", "is": ">=", "target": 1 } ]
+  },
+  {
+    "id": "num_avatar_arcana_divine_sealing_charm",
+    "type": "event_statistic",
+    "stat_type": "count",
+    "event_transformation": "avatar_arcana_divine_sealing_charm"
+  },
+  {
+    "id": "avatar_arcana_divine_sealing_charm",
+    "type": "event_transformation",
+    "event_type": "character_gains_effect",
+    "value_constraints": { "effect": { "equals": "cf_purifier_kairos" } },
+    "drop_fields": [ "effect" ]
+  },
+  {
     "id": "achievement_arcana_mission_sword",
     "type": "achievement",
     "name": { "str": "<color_cyan>(Arcana)</color> A Lost Dream, Rekindled" },
@@ -154,7 +175,8 @@
     "name": { "str": "<color_cyan>(Arcana)</color> Never Too Deep" },
     "description": "Purge the land of a demon lurking beneath sacred ground.",
     "hidden_by": [ "achievement_arcana_monkill_spirit_of_fire" ],
-    "requirements": [ { "event_statistic": "num_avatar_arcana_monkill_spirit_of_fire", "is": ">=", "target": 1 } ]
+    "kill_requirements": [ { "monster": "mon_spirit_of_fire", "is": ">=", "count": 1 } ],
+    "requirements": [ { "event_statistic": "num_avatar_arcana_monkill_spirit_of_fire", "is": "anything" } ]
   },
   {
     "id": "num_avatar_arcana_monkill_spirit_of_fire",
@@ -175,7 +197,8 @@
     "name": { "str": "<color_cyan>(Arcana)</color> Wild Rose" },
     "description": "Slay the beast that stalks an abandoned grove.",
     "hidden_by": [ "achievement_arcana_monkill_moruboru" ],
-    "requirements": [ { "event_statistic": "num_avatar_arcana_monkill_moruboru", "is": ">=", "target": 1 } ]
+    "kill_requirements": [ { "monster": "mon_moruboru", "is": ">=", "count": 1 } ],
+    "requirements": [ { "event_statistic": "num_avatar_arcana_monkill_moruboru", "is": "anything" } ]
   },
   {
     "id": "num_avatar_arcana_monkill_moruboru",
@@ -196,7 +219,8 @@
     "name": { "str": "<color_cyan>(Arcana)</color> May He Forge Your Chains" },
     "description": "Kill a possessed priest, hidden away in a temple on floating stone.",
     "hidden_by": [ "achievement_arcana_monkill_archon" ],
-    "requirements": [ { "event_statistic": "num_avatar_arcana_monkill_archon", "is": ">=", "target": 1 } ]
+    "kill_requirements": [ { "monster": "mon_archon", "is": ">=", "count": 1 } ],
+    "requirements": [ { "event_statistic": "num_avatar_arcana_monkill_archon", "is": "anything" } ]
   },
   {
     "id": "num_avatar_arcana_monkill_archon",
@@ -217,7 +241,8 @@
     "name": { "str": "<color_cyan>(Arcana)</color> Dragon Re-Slayer" },
     "description": "Put down an infested creature, dragged from the Beyond to a lost temple.",
     "hidden_by": [ "achievement_arcana_monkill_dracolich" ],
-    "requirements": [ { "event_statistic": "num_avatar_arcana_monkill_dracolich", "is": ">=", "target": 1 } ]
+    "kill_requirements": [ { "monster": "mon_dracolich", "is": ">=", "count": 1 } ],
+    "requirements": [ { "event_statistic": "num_avatar_arcana_monkill_dracolich", "is": "anything" } ]
   },
   {
     "id": "num_avatar_arcana_monkill_dracolich",
@@ -238,7 +263,8 @@
     "name": { "str": "<color_cyan>(Arcana)</color> So Long As The Sun Shines" },
     "description": "Complete Johnathan's Missions, hunting the enemies of humanity.",
     "hidden_by": [ "achievement_arcana_npc_matthew" ],
-    "requirements": [ { "event_statistic": "num_avatar_arcana_monkill_seraphic_shade", "is": ">=", "target": 1 } ]
+    "kill_requirements": [ { "monster": "mon_seraphic_shade", "is": ">=", "count": 1 } ],
+    "requirements": [ { "event_statistic": "num_avatar_arcana_monkill_seraphic_shade", "is": "anything" } ]
   },
   {
     "id": "num_avatar_arcana_monkill_seraphic_shade",
@@ -294,5 +320,36 @@
     "event_type": "crosses_mutation_threshold",
     "value_constraints": { "category": { "equals": "DRAGONBLOOD" } },
     "drop_fields": [ "category" ]
+  },
+  {
+    "id": "achievement_lvl_5_arcana",
+    "type": "achievement",
+    "name": { "str": "<color_cyan>(Arcana)</color> Insight" },
+    "description": "There are things mankind was not meant to learn.  And some things we were destined to learn.",
+    "skill_requirements": [ { "skill": "magic", "is": ">=", "level": 5 } ],
+    "requirements": [ { "event_statistic": "num_gains_arcana", "is": "anything" } ]
+  },
+  {
+    "id": "achievement_lvl_10_arcana",
+    "type": "achievement",
+    "name": { "str": "<color_cyan>(Arcana)</color> Apprehension" },
+    "description": "Seek not the things that are too high for thee.  But, it's in our nature to master the unknown.",
+    "skill_requirements": [ { "skill": "magic", "is": ">=", "level": 10 } ],
+    "requirements": [ { "event_statistic": "num_gains_arcana", "is": "anything" } ],
+    "hidden_by": [ "achievement_lvl_5_arcana" ]
+  },
+  {
+    "id": "num_gains_arcana",
+    "type": "event_statistic",
+    "stat_type": "count",
+    "event_transformation": "avatar_gains_arcana",
+    "description": { "str_sp": "arcana skill level up." }
+  },
+  {
+    "id": "avatar_gains_arcana",
+    "type": "event_transformation",
+    "event_type": "gains_skill_level",
+    "value_constraints": { "character": { "equals_statistic": "avatar_id" }, "skill": { "equals": "magic" } },
+    "drop_fields": [ "character", "skill" ]
   }
 ]
