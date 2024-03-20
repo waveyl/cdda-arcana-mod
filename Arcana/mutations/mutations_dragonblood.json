@@ -167,7 +167,7 @@
     "changes_to": [ "ARCANA_DRAGONSCALES" ],
     "leads_to": [ "ARCANA_SCALYWINGS", "ARCANA_SCALYTAIL" ],
     "types": [ "SKIN" ],
-    "stealth_modifier": -5,
+    "enchantments": [ { "condition": "ALWAYS", "values": [ { "value": "STEALTH_MODIFIER", "add": -5 } ] } ],
     "wet_protection": [
       { "part": "head", "ignored": 2 },
       { "part": "leg_l", "ignored": 5 },
@@ -199,7 +199,7 @@
     "leads_to": [ "ARCANA_SCALYWINGS", "ARCANA_SCALYTAIL", "ARCANA_SCALYLEGS" ],
     "threshreq": [ "THRESH_DRAGONBLOOD" ],
     "types": [ "SKIN" ],
-    "stealth_modifier": -30,
+    "enchantments": [ { "condition": "ALWAYS", "values": [ { "value": "STEALTH_MODIFIER", "add": -30 } ] } ],
     "wet_protection": [
       { "part": "head", "ignored": 5 },
       { "part": "leg_l", "ignored": 16 },
@@ -281,13 +281,19 @@
     "changes_to": [ "ARCANA_INNERFIRE" ],
     "category": [ "DRAGONBLOOD" ],
     "types": [ "METABOLISM" ],
-    "metabolism_modifier": 0.25,
-    "stomach_size_multiplier": 1.5,
-    "thirst_modifier": 0.125,
+    "enchantments": [
+      {
+        "values": [
+          { "value": "METABOLISM", "multiply": 0.25 },
+          { "value": "STOMACH_SIZE_MULTIPLIER", "multiply": 0.5 },
+          { "value": "STOMACH_SIZE_MULTIPLIER", "multiply": 0.125 },
+          { "value": "STAMINA_REGEN_MOD", "add": 0.5 }
+        ]
+      }
+    ],
     "healing_awake": 0.5,
     "healing_multiplier": 1.25,
     "mending_modifier": 0.5,
-    "stamina_regen_modifier": 0.5,
     "vitamin_rates": [ [ "blood", -5 ], [ "redcells", -5 ] ],
     "flags": [ "PRED1" ]
   },
@@ -307,13 +313,19 @@
     "leads_to": [ "ARCANA_FIREAFFINITY", "ARCANA_TOXINIMMUNE" ],
     "category": [ "DRAGONBLOOD" ],
     "types": [ "METABOLISM" ],
-    "metabolism_modifier": 0.5,
-    "stomach_size_multiplier": 2.0,
-    "thirst_modifier": 0.25,
+    "enchantments": [
+      {
+        "values": [
+          { "value": "METABOLISM", "multiply": 0.5 },
+          { "value": "STOMACH_SIZE_MULTIPLIER", "multiply": 1.0 },
+          { "value": "STOMACH_SIZE_MULTIPLIER", "multiply": 0.25 },
+          { "value": "STAMINA_REGEN_MOD", "add": 0.666 }
+        ]
+      }
+    ],
     "healing_awake": 1.0,
     "healing_multiplier": 1.5,
     "mending_modifier": 1.0,
-    "stamina_regen_modifier": 0.666,
     "social_modifiers": { "persuade": -25, "intimidate": 25 },
     "vitamin_rates": [ [ "blood", -3 ], [ "redcells", -3 ] ],
     "flags": [ "PRED2" ]
@@ -334,13 +346,19 @@
     "threshreq": [ "THRESH_DRAGONBLOOD" ],
     "category": [ "DRAGONBLOOD" ],
     "types": [ "METABOLISM" ],
-    "metabolism_modifier": 0.75,
-    "stomach_size_multiplier": 2.25,
-    "thirst_modifier": 0.375,
+    "enchantments": [
+      {
+        "values": [
+          { "value": "METABOLISM", "multiply": 0.75 },
+          { "value": "STOMACH_SIZE_MULTIPLIER", "multiply": 1.25 },
+          { "value": "STOMACH_SIZE_MULTIPLIER", "multiply": 0.375 },
+          { "value": "STAMINA_REGEN_MOD", "add": 0.75 }
+        ]
+      }
+    ],
     "healing_awake": 2.5,
     "healing_multiplier": 2.25,
     "mending_modifier": 2.5,
-    "stamina_regen_modifier": 0.75,
     "social_modifiers": { "persuade": -25, "intimidate": 25 },
     "active": true,
     "cost": 500,
@@ -365,12 +383,19 @@
     "encumbrance_always": [ [ "torso", 5 ] ],
     "category": [ "DRAGONBLOOD" ],
     "types": [ "WINGS" ],
-    "cardio_multiplier": 1.1,
     "restricts_gear": [ "torso" ],
     "allow_soft_gear": true,
     "allowed_items": [ "BELTED" ],
-    "dodge_modifier": -1,
-    "passive_mods": { "str_mod": 2, "dex_mod": -1 },
+    "enchantments": [
+      {
+        "values": [
+          { "value": "BONUS_DODGE", "add": -1 },
+          { "value": "DEXTERITY", "add": -1 },
+          { "value": "STRENGTH", "add": 2 },
+          { "value": "CARDIO_MULTIPLIER", "multiply": 0.1 }
+        ]
+      }
+    ],
     "flags": [ "ARCANA_DRAGONBLOOD_MARKER_WINGS" ]
   },
   {
@@ -389,12 +414,19 @@
     "threshreq": [ "THRESH_DRAGONBLOOD" ],
     "category": [ "DRAGONBLOOD" ],
     "types": [ "WINGS" ],
-    "enchantments": [ "ENCH_DRAGONBLOOD_DRACONIC_WINGS" ],
-    "cardio_multiplier": 1.2,
     "restricts_gear": [ "torso" ],
     "allow_soft_gear": true,
     "allowed_items": [ "BELTED" ],
-    "passive_mods": { "str_mod": 5, "dex_mod": -2 }
+    "enchantments": [
+      "ENCH_DRAGONBLOOD_DRACONIC_WINGS",
+      {
+        "values": [
+          { "value": "STRENGTH", "add": 5 },
+          { "value": "DEXTERITY", "add": -2 },
+          { "value": "CARDIO_MULTIPLIER", "multiply": 0.2 }
+        ]
+      }
+    ]
   },
   {
     "type": "mutation",
@@ -410,8 +442,8 @@
     "types": [ "CLAWS" ],
     "category": [ "DRAGONBLOOD" ],
     "encumbrance_covered": [ [ "hand_l", 5 ], [ "hand_r", 5 ] ],
-    "cut_dmg_bonus": 7,
-    "flags": [ "UNARMED_BONUS" ]
+    "flags": [ "UNARMED_BONUS" ],
+    "enchantments": [ { "condition": { "not": "u_has_weapon" }, "values": [ { "value": "ITEM_DAMAGE_CUT", "add": 7 } ] } ]
   },
   {
     "type": "mutation",
@@ -479,9 +511,6 @@
     "encumbrance_always": [ [ "leg_l", 5 ], [ "leg_r", 5 ], [ "foot_l", 5 ], [ "foot_r", 5 ] ],
     "encumbrance_covered": [ [ "leg_l", 5 ], [ "leg_r", 5 ] ],
     "restricts_gear": [ "foot_l", "foot_r" ],
-    "movecost_obstacle_modifier": 1.375,
-    "movecost_flatground_modifier": 0.875,
-    "noise_modifier": 2.0,
     "attacks": [
       {
         "attack_text_u": "You rake %s with your toe claws",
@@ -490,7 +519,16 @@
         "strength_damage": { "damage_type": "cut", "amount": 2 }
       }
     ],
-    "allowed_items": [ "ALLOWS_TALONS" ]
+    "allowed_items": [ "ALLOWS_TALONS" ],
+    "enchantments": [
+      {
+        "values": [
+          { "value": "MOVECOST_FLATGROUND_MOD", "multiply": -0.125 },
+          { "value": "MOVECOST_OBSTACLE_MOD", "multiply": 0.375 },
+          { "value": "FOOTSTEP_NOISE", "multiply": 1.0 }
+        ]
+      }
+    ]
   },
   {
     "type": "mutation",
@@ -509,9 +547,6 @@
     "types": [ "LEGS", "FEET" ],
     "encumbrance_covered": [ [ "leg_l", 5 ], [ "leg_r", 5 ] ],
     "restricts_gear": [ "foot_l", "foot_r" ],
-    "movecost_obstacle_modifier": 1.25,
-    "movecost_flatground_modifier": 0.75,
-    "noise_modifier": 1.5,
     "attacks": [
       {
         "attack_text_u": "You rake %s with your toe claws",
@@ -520,7 +555,16 @@
         "strength_damage": { "damage_type": "cut", "amount": 4 }
       }
     ],
-    "allowed_items": [ "ALLOWS_TALONS" ]
+    "allowed_items": [ "ALLOWS_TALONS" ],
+    "enchantments": [
+      {
+        "values": [
+          { "value": "MOVECOST_FLATGROUND_MOD", "multiply": -0.25 },
+          { "value": "MOVECOST_OBSTACLE_MOD", "multiply": 0.25 },
+          { "value": "FOOTSTEP_NOISE", "multiply": 0.5 }
+        ]
+      }
+    ]
   },
   {
     "type": "mutation",
@@ -544,7 +588,7 @@
       "chance": 20,
       "base_damage": { "damage_type": "bash", "amount": 1 }
     },
-    "dodge_modifier": 2,
+    "enchantments": [ { "values": [ { "value": "BONUS_DODGE", "add": 2 } ] } ],
     "flags": [ "ARCANA_DRAGONBLOOD_MARKER_TAIL" ],
     "allowed_items": [ "ALLOWS_TAIL" ]
   },
@@ -570,7 +614,7 @@
       "base_damage": { "damage_type": "bash", "amount": 8 }
     },
     "//": "Becoming less effective at balancing is intentional, spikes aren't as substantial as Spiked Tail but still impedes dodge bonus.",
-    "dodge_modifier": 1,
+    "enchantments": [ { "values": [ { "value": "BONUS_DODGE", "add": 1 } ] } ],
     "flags": [ "ARCANA_DRAGONBLOOD_MARKER_TAIL" ],
     "allowed_items": [ "ALLOWS_TAIL" ]
   },
@@ -612,7 +656,7 @@
     "category": [ "DRAGONBLOOD" ],
     "threshreq": [ "THRESH_DRAGONBLOOD" ],
     "types": [ "SKIN" ],
-    "stealth_modifier": -15,
+    "enchantments": [ { "condition": "ALWAYS", "values": [ { "value": "STEALTH_MODIFIER", "add": -15 } ] } ],
     "wet_protection": [
       { "part": "head", "ignored": 5 },
       { "part": "leg_l", "ignored": 16 },
@@ -646,14 +690,18 @@
     "types": [ "SIZE" ],
     "social_modifiers": { "intimidate": 20 },
     "craft_skill_bonus": [ [ "computer", -2 ], [ "electronics", -2 ], [ "mechanics", -2 ], [ "tailor", -2 ] ],
-    "reading_speed_multiplier": 1.25,
     "scent_intensity": 1200,
     "scent_type": "sc_dragonblood",
-    "enchantments": [ "ENCH_DRAGONBLOOD_KNOCKDOWN" ],
     "anger_relations": [ [ "DRAGON", -100 ], [ "FUNGUS", 25 ], [ "MAMMAL", 15 ], [ "BIRD", 15 ], [ "REPTILE", 15 ] ],
-    "weight_capacity_modifier": 1.05,
-    "passive_mods": { "str_mod": 2 },
-    "hp_adjustment": 25,
+    "enchantments": [
+      "ENCH_DRAGONBLOOD_KNOCKDOWN",
+      {
+        "values": [
+          { "value": "STRENGTH", "add": 2 },
+          { "value": "MAX_HP", "add": 25 },
+          { "value": "CARRY_WEIGHT", "multiply": 0.05 },
+          { "value": "READING_SPEED_MULTIPLIER", "multiply": 0.25 }
+          ] } ],
     "flags": [ "PRED4", "LARGE", "PSYCHOPATH" ]
   }
 ]
